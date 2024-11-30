@@ -1,0 +1,79 @@
+.footer {
+  @extend %background;
+  margin: 0 20px;
+
+  .responsive {
+    overflow-x: auto;
+    table {
+      min-width: 1000px;
+      width: 100%;
+      border-spacing: 0;
+  
+      th {
+        text-align: start;
+        padding: 15px;
+        border: 1px solid #eee;
+        font-size: 18px;
+      }
+  
+      thead {
+        tr {
+          th {
+            text-align: start;
+            background-color: #eee;
+  
+            font: {
+              size: 19px;
+              weight: bold;
+            }
+          }
+        }
+      }
+  
+      tbody {
+        tr {
+          th {
+            font-weight: normal;
+            font-size: 15px;
+          }
+  
+          .img {
+            img {
+              width: 32px;
+              height: 32px;
+              @include prefixer(border-radius, 50%, webkit moz o);
+              background-color: #fff;
+  
+              &:not(:first-child) {
+                margin-left: -20px;
+              }
+            }
+          }
+  
+          .Status {
+            span {
+              display: block;
+              padding: 5px 10px;
+              background-color: #eee;
+              color: #fff;
+              width: fit-content;
+              @include borderra;
+            }
+            .orange {
+              background-color: $orange-color;
+            }
+            .blue {
+              background-color: $blue-color;
+            }
+            .green {
+              background-color: $green-color;
+            }
+            .red {
+              background-color: $red-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

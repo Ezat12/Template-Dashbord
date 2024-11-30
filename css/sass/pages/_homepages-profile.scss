@@ -1,0 +1,215 @@
+/// Start Profile
+/* Start Avatar */
+.overflow {
+  @extend %background;
+  margin: 0 20px 20px 20px;
+  @include flexbox;
+  padding: 0;
+
+  @media #{$maxmobile} {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .avtar {
+    padding: 30px 50px;
+    text-align: center;
+    border-right: 1px solid #eee;
+
+    @media #{$maxmobile} {
+      border: none;
+    }
+
+    .img-avtar {
+      width: 120px;
+      height: 120px;
+    }
+
+    h3 {
+      margin: 10px 0;
+    }
+
+    .gray {
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .level {
+      width: 100%;
+      height: 6px;
+      background-color: #eee;
+      margin: 20px auto 10px;
+      @include prefixer(border-radius, 6px, webkit moz o);
+      position: relative;
+
+      span {
+        position: absolute;
+        height: 100%;
+        background-color: $blue-color;
+        top: 0;
+        left: 0;
+        @include prefixer(border-radius, 6px, webkit moz o);
+      }
+    }
+
+    .icons {
+      color: $orange-color;
+      font-size: 15px;
+    }
+
+    .rating {
+      margin-top: 10px;
+      color: #777;
+    }
+  }
+
+  .content {
+    .content-box {
+      padding: 20px;
+      @include flexbox;
+      flex-wrap: wrap;
+
+      &:not(:last-child) {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .widths {
+        width: 100%;
+        color: #777;
+        margin-bottom: 10px;
+      }
+
+      .pro {
+        min-width: 320px;
+        color: #777;
+        margin-bottom: 15px;
+
+        span {
+          color: #000;
+        }
+      }
+
+      label {
+        @include prefixer(transition, $transition , moz webkit o);
+
+        .info {
+          margin-right: 50px;
+          width: 70px;
+          height: 20px;
+          background-color: $blue-color;
+          @include prefixer(border-radius, 10px, webkit moz o);
+          position: relative;
+          cursor: pointer;
+          @include prefixer(transition, $transition , moz webkit o);
+
+          &::before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 free";
+            font-weight: 900;
+            height: 14px;
+            width: 14px;
+            top: 3px;
+            right: 4px;
+            background-color: #eee;
+            color: $blue-color;
+            @include flexbox;
+            justify-content: center;
+            font-size: 13px;
+            position: absolute;
+            @include prefixer(border-radius, 50%, webkit moz o);
+            @include prefixer(transition, $transition , moz webkit o);
+          }
+        }
+
+        input {
+          @include prefixer(appearance, none, webkit moz o);
+
+          &:checked+.info {
+            background-color: rgb(170, 170, 170);
+
+            &::before {
+              content: "\f00d";
+              right: 54px;
+              background-color: #fff;
+              color: rgb(170, 170, 170);
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+/* End Avatar */
+/* Start Other Data */
+.other-data {
+  display: flex;
+  margin: 0 20px 20px 20px;
+  gap: 20px;
+
+  .skills {
+    @extend %background;
+    flex-basis: 30%;
+
+    &-box {
+      @include flexbox;
+      gap: 10px;
+      padding: 10px 0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #eee;
+      }
+
+      span {
+        display: block;
+        background-color: #eee;
+        padding: 7px 10px;
+        @include prefixer(border-radius, 6px, webkit moz o);
+      }
+    }
+  }
+  .latest-activities {
+    @extend %background;
+    flex-basis: 70%;
+    .activi-box {
+      @include flexbox;
+      justify-content: space-between;
+      &:not(:last-child) {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+      }
+      .store {
+        @include flexbox;
+        img {
+          width: 64px;
+          height: 64px;
+          margin-right: 10px;
+        }
+        .info {
+          span {
+            display: block;
+            margin-bottom: 10px;
+          }
+          p {
+            color: #777;
+          }
+        }
+      }
+      .time {
+        span {
+          display: block;
+          margin-bottom: 10px;
+        }
+        p {
+          color: #777;
+        }
+      }
+    }
+
+  }
+}
+
+/* End Other Data */

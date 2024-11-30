@@ -1,0 +1,15 @@
+.button-link {
+  display: block;
+  padding: 10px 15px;
+  background-color: $blue-color;
+  color: #fff;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 20px;
+  @include borderra;
+  @include prefixer(transition , $transition , moz webkit o);
+  &:hover {
+    background-color: $blue-alt-color;
+  }
+}

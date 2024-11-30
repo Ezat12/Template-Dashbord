@@ -1,0 +1,22 @@
+* {
+  @include prefixer(box-sizing , border-box , webkit o moz);
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.wrapper-grid {
+  @include grid(450px);
+  margin: 0 20px 20px 20px;
+  gap: 20px;
+  @media #{$maxmobile} {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px 10px 10px;
+  }
+}

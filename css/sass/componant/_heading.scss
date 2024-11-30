@@ -1,0 +1,18 @@
+.heading {
+  margin: 20px 20px 40px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background-color: #fff;
+    bottom: -20px;
+    left: 0;
+  }
+  &::after {
+    @extend ::before;
+    width: 50px;
+    background-color: #000;
+  }
+}

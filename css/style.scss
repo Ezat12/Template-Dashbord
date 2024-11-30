@@ -1,0 +1,20 @@
+@import "./sass/helpers/variables";
+@import "./sass/helpers/mixin";
+
+@import "./sass/componant/button";
+@import "./sass/componant/heading";
+
+@import "./sass/pages/globalpages";
+@import "./sass/pages/homepages-dash";
+@import "./sass/pages/homepages-profile";
+@import "./sass/pages/homepages-setting";
+@import "./sass/pages/homepage-project";
+@import "./sass/pages/homepages-courses";
+@import "./sass/pages/homepages-friends";
+@import "./sass/pages/homepages-files";
+@import "./sass/pages/homepages-plans";
+
+@import "./sass/layout/grid";
+@import "./sass/layout/sidebar";
+@import "./sass/layout/header";
+@import "./sass/layout/footer";

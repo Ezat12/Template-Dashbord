@@ -1,0 +1,78 @@
+.wrapper-grid {
+  .name-project {
+    @extend %background;
+    position: relative;
+  }
+
+  .imges {
+    min-height: 80px;
+    position: relative;
+    @include flexbox;
+    align-items: end;
+
+    img {
+      width: 40px;
+      height: 40px;
+      @include prefixer(border-radius, 50%, webkit moz o);
+      background-color: #fff;
+      padding: 2px;
+      border: 2px solid #fff;
+      margin-right: -15px;
+    }
+  }
+
+  .skill {
+    @include flexbox;
+    justify-content: end;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+
+    p {
+      background-color: #eee;
+      padding: 5px 7px;
+      @include prefixer(border-radius, 6px, webkit moz o);
+    }
+  }
+
+  .value {
+    @include flexbox;
+    justify-content: space-between;
+    margin-top: 15px;
+
+    .dola {
+      color: #777;
+    }
+
+    .prog {
+      width: 260px;
+      height: 8px;
+      position: relative;
+      background-color: #eee;
+      @include prefixer(border-radius, 6px, webkit moz o);
+
+      span {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        @include prefixer(border-radius, 6px, webkit moz o);
+      }
+
+      .red {
+        background-color: $red-color;
+      }
+
+      .green {
+        background-color: $green-color;
+      }
+
+      .blue {
+        background-color: $blue-color;
+      }
+    }
+  }
+}

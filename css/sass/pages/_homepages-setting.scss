@@ -1,0 +1,307 @@
+// Start Settings
+/* Start Site Control */
+.site-control {
+  @extend %background;
+
+  .control {
+    @include flexbox;
+    justify-content: space-between;
+
+    .info {
+      h4 {
+        margin-bottom: 10px;
+      }
+
+      p {
+        @extend .p-title;
+      }
+    }
+  }
+
+  textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    @include borderra;
+    resize: none;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* End Site Control */
+
+/* Start General Info*/
+.general {
+  @extend %background;
+
+  form {
+    .general-inout {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 15px;
+      color: #777;
+
+      input {
+        padding: 10px;
+        @include borderra;
+        outline: none;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+
+      .chang {
+        @include flexbox;
+
+        // justify-content: space-between;
+        input {
+          flex-basis: 90%;
+        }
+
+        span {
+          flex-basis: 10%;
+          padding-left: 20px;
+          display: block;
+          color: $blue-color;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/* End General Info */
+
+/* Start Security info */
+.security {
+  @extend %background;
+
+  &-box {
+    @include flexbox;
+    ;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    &:not(:last-child) {
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    span {
+      display: block;
+      margin: 5px 0 10px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    .button-link {
+      padding: 7px 10px;
+      margin: 0;
+    }
+
+    .devices {
+      display: block;
+      background-color: #eee;
+      padding: 7px 10px;
+      color: #000;
+      @include borderra;
+
+      font: {
+        size: 18px;
+      }
+    }
+  }
+}
+
+/* End Security info */
+
+/* Start Social */
+.social-info {
+  @extend %background;
+
+  .box-input {
+    background-color: #f6f6f6;
+    border: 1px solid #ddd;
+    @include prefixer(border-radius, 6px, webkit moz o);
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    i {
+      color: #777;
+      padding: 0 10px;
+      @include prefixer(border-radius, 6px, moz webkit o);
+    }
+
+    input {
+      font-size: 15px;
+      font-weight: normal;
+      background-color: #f6f6f6;
+      border: none;
+      outline: none;
+      padding: 10px;
+      border-left: 1px solid #ddd;
+      flex-basis: 1;
+    }
+  }
+}
+
+/* End Social */
+/* Start Widgets Control */
+.widgets {
+  @extend %background;
+
+  .label-checked {
+    &:not(:last-child) {
+      margin-bottom: 15px
+    }
+
+    input {
+      @include prefixer(appearance, none, webkit moz o);
+
+      &:hover+label {
+        &::before {
+          border-color: $blue-color;
+        }
+      }
+
+      &:checked+label::after {
+        content: "";
+        background-color: transparent;
+      }
+    }
+
+    label {
+      padding-left: 25px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        top: 50%;
+        left: -5px;
+        border: 2px solid #888;
+        @include prefixer(transform, translateY(-50%), webkit moz o);
+        border-radius: 4px;
+        @include prefixer(transition, $transition , moz webkit o);
+
+      }
+
+      &::after {
+        position: absolute;
+        font-family: "Font Awesome 5 free";
+        content: "\f00c";
+        font-weight: 900;
+        width: 18px;
+        height: 18px;
+        top: 50%;
+        left: -5px;
+        @include prefixer(transform, translateY(-50%), webkit moz o);
+        @include prefixer(transition, $transition , moz webkit o);
+        background-color: $blue-color;
+        color: #fff;
+        font-size: 12px;
+        @include flexbox;
+        justify-content: center;
+        border-radius: 4px;
+        // @include prefixer(transform , rotate(360deg) , webkit moz o);
+        // margin-top: -9px;
+      }
+    }
+  }
+}
+
+/* End Widgets Control */
+/* Start Backup Manager */
+.backup {
+  @extend %background;
+
+  &-label {
+    margin-bottom: 15px;
+
+    input {
+      @include prefixer(appearance, none, webkit moz o);
+
+      &:checked+label {
+        &::before {
+          border-color: $blue-color;
+        }
+
+        &::after {
+          background-color: $blue-color;
+        }
+      }
+    }
+
+    label {
+      padding-left: 30px;
+      cursor: pointer;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        @include prefixer(transform, translateY(-50%), webkit moz o);
+        width: 18px;
+        height: 18px;
+        border: 2px solid #888;
+        @include prefixer(border-radius, 50%, webkit moz o);
+        @include prefixer(transition, $transition , webkit moz o);
+      }
+
+      &::after {
+        width: 14px;
+        height: 15px;
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 50%;
+        @include prefixer(transform, translateY(-50%), webkit moz o);
+        background-color: #fff;
+        @include prefixer(border-radius, 50%, webkit moz o);
+        @include prefixer(transition, $transition , webkit moz o);
+      }
+    }
+  }
+
+  .boxing {
+    border-top: 1px solid #eee;
+    @include flexbox;
+    gap: 10px;
+
+    .border-label {
+      flex-basis: 100%;
+
+      input {
+        @include prefixer(appearance, none, webkit moz o);
+
+        &:checked+label {
+          border-color: $blue-color;
+          color: $blue-color;
+        }
+      }
+
+      label {
+        @include flexbox;
+        justify-content: center;
+        flex-direction: column;
+        border: 2px solid #eee;
+        padding: 15px;
+        @include prefixer(border-radius, 6px, webkit moz o);
+
+        i {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+/* End Backup Manager */

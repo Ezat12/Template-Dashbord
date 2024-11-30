@@ -1,0 +1,74 @@
+.header {
+  @include flexbox;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+
+  form {
+    position: relative;
+    input {
+      outline: none;
+      padding: 10px 30px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      width: 200px;
+      @include prefixer(transition, $transition , webkit moz o);
+      &:focus {
+        width: 230px;
+        
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+      @media #{$maxmobile} {
+        & {
+          width: 180px;
+          font-size: 14px;
+          &:focus {
+            width: 190px;
+          }
+        }
+      }
+
+    }
+    &::before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f002";
+      font-weight: 900;
+      position: absolute;
+      font-size: 14px;
+      top: 50%;
+      left: 10px;
+      @include prefixer(transform, translateY(-50%), moz webkit o);
+      color: #777
+    }
+  }
+
+  .icon {
+    @include flexbox;
+
+    span {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #f44336;
+        top: -6px;
+        right: -8px;
+        @include prefixer(border-radius, 50%, webkit moz o)
+      }
+
+      span i {
+        font-size: 22px;
+      }
+    }
+
+    img {
+      width: 30px;
+      margin-left: 20px;
+    }
+  }
+}

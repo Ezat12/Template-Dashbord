@@ -1,0 +1,164 @@
+.files {
+  display: flex;
+  margin: 0 20px 20px 20px;
+  gap: 20px;
+  @media #{$maxmobile} {
+    flex-direction: column-reverse;
+  }
+  .file-content {
+    @include grid(200px);
+    gap: 20px;
+    flex: 1;
+    .file {
+      @extend %background;
+      position: relative;
+      &:hover img {
+        @include prefixer(transform ,rotate(10deg) , webkit moz o );
+      }
+      i {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #777;
+      }
+      .my-file {
+        margin: 10px ;
+        text-align: center;
+        img {
+          margin: 15px;
+          width: 64px;
+          height: 64px;
+          @include prefixer(transition , $transition , webkit moz o);
+        }
+        span {
+          display: block;
+          margin-bottom: 10px ;
+        }
+      }
+      .names {
+        font-size: 13px;
+        margin: 10px 0;
+        color: #888;
+        font-family: cursive;
+      }
+      .info {
+        @include flexbox;
+        justify-content: space-between;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+        font-size: 13px;
+        p {
+          color: #888;
+          font-family: cursive;
+        }
+      }
+    }
+  }
+  .file-page {
+    @extend %background;
+    min-width: 260px;
+    height: fit-content;
+    h2 {
+      margin-bottom: 15px;
+      text-align: center;;
+    }
+    .file-box {
+      padding: 10px;
+      border: 1px solid #eee;
+      @include borderra;
+      @include flexbox;
+      justify-content: space-between;
+      &:not(:last-child) {
+        margin-bottom: 10px
+      }
+      height: fit-content;
+      .content {
+        @include flexbox;
+        i {
+          width: 40px;
+          height: 40px;
+          @include flexbox;
+          justify-content: center;
+          margin-right: 10px;
+        }
+        .blue {
+          color: $blue-color;
+          background-color: rgb(0 117 255 / 20%);
+        }
+        .green {
+          color: $green-color;
+          background-color: rgba(34, 197, 94, 0.2);
+        }
+        .red {
+          color: $red-color;
+          background-color: rgba(244, 67, 54, 0.2);
+        }
+        .orange {
+          color: $orange-color;
+          background-color: rgba(245, 158, 11, 0.2);
+        }
+        .info {
+          p {
+            font-size: 14px;
+          }
+          span {
+            font-size: 14px;
+            color: #777;
+            display: block;
+            margin-top: 5px;
+          }
+        }
+      }
+      .gega {
+        font-size: 14px;
+        color: #777;
+      }
+    }
+    .upload {
+      margin: 15px auto 0;
+      display: block;
+      @include flexbox;
+      justify-content: center;
+      background-color: $blue-color;
+      padding: 10px 15px;
+      @include borderra; 
+      color: #fff;
+      width: fit-content;
+      @include prefixer(transition , $transition , webkit moz o);
+      &:hover {
+        background-color: $blue-alt-color;
+        & i {
+          @include prefixer(animation , top 1s infinite linear , webkit  );
+        }
+      }
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+
+@keyframes top {
+  0% {
+    transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
+}
+  50% {
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+}
+  100% {
+    transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
+}
+}

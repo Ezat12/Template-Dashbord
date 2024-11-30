@@ -1,0 +1,93 @@
+.friend-page {
+  @extend .courses-page;
+  .friend {
+    @extend %background;
+    position: relative;
+    .icons {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      i {
+        background-color: #eee;
+        color: #666;
+        @include prefixer(border-radius , 50% , webkit moz o);
+        padding: 10px;
+        font-size: 13px;
+        cursor: pointer;
+        @include prefixer(transition , $transition , webkit moz o);
+        &:hover {
+          color: #fff;
+          background-color:$blue-color ;
+        }
+      }
+    }
+    .contact {
+      text-align: center;
+      margin: 10px auto;
+      img {
+        width: 100px;
+        height: 100px;
+        @include prefixer(border-radius , 50% , webkit moz o);
+        margin-bottom: 10px;
+      }
+      h3 {
+        margin-bottom: 5px;
+      }
+      p {
+        color: #777;
+      }
+    }
+    .coll {
+      @include flexbox;
+      justify-content: space-between;
+      padding: 15px 0;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      .info {
+        &-con {
+          &:not(:last-child) {
+            margin-bottom: 10px;
+          }
+          font-family: sans-serif;
+          font-size: 14px;
+          i {
+            margin-right: 5px;
+          }
+        }
+      }
+      .vip {
+        font-size: 40px;
+        color: $orange-color;
+        font-weight: bold;
+        opacity: 0.2;
+      }
+    }
+    .joined {
+      @include flexbox;
+      justify-content: space-between;
+      padding-top: 15px ;
+      span {
+        color: #777;
+        font-size: 14px;
+        font-family: sans-serif;
+      }
+      .link {
+        display: flex;
+        a {
+          color: #fff;
+          background-color: #eee;
+          padding: 4px 10px ;
+          @include prefixer(border-radius , 6px , webkit moz o);
+          font-size: 14px;
+        }
+        .blue {
+          background-color: $blue-color;
+          margin-right: 5px;
+        }
+        .red {
+          background-color: $red-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+
+// prefix
+
+@mixin prefixer( $property , $value , $prefixes: () ) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property} : $value;
+  }
+  #{$property} : $value
+}
+
+//flex
+@mixin flexbox {
+  display: flex;
+  align-items: center;
+}
+
+//grid
+@mixin grid($value) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax($value , 1fr));
+}
+
+@mixin borderra {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
